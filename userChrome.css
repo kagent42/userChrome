@@ -1,0 +1,112 @@
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+
+#titlebar {
+  appearance: none !important;
+  height: 0;
+}
+
+#titlebar > #toolbar-menubar {
+  margin-top: 0;
+}
+
+#TabsToolbar {
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+/* Adding empty space for buttons */
+#nav-bar {
+	margin-right:100px;
+}
+
+/* 15px for dragging whole window by mouse*/
+#titlebar {
+	appearance: none !important;
+	height: 15px;
+}
+
+/* Fix for main menu calling by Alt button */
+#titlebar > #toolbar-menubar {
+	margin-top: 10px;
+}
+
+/* Move minimize/restore/close buttons to empty space */
+#TabsToolbar > .titlebar-buttonbox-container {
+	display:block;
+	position: absolute;
+	top: 14px;
+    right: 1px;
+    background: #3b4252;
+    width: 100px;
+    height: 41px;
+    border-top: 1px solid #4c566a;
+} .titlebar-min {
+    display: block;
+    position: relative;
+    top: 5px !important;
+} .titlebar-max {
+    display: block;
+    position: relative;
+    top: 5px !important;
+} .titlebar-restore {
+    display: block;
+    position: relative;
+    top: 5px !important;
+} .titlebar-close {
+    display: block;
+    position: relative;
+    top: 5px !important;
+}
+
+/*
+ * Description: Auto-hide sidebar.
+ *
+ * Contributor(s): img2tab
+ */
+
+/* To right-align the sidebar, replace all occurrences of "left" with "right", and "margin-right" with "margin-left" */
+:root {
+  --sidebar-hover-width: 10px;
+  --sidebar-visible-width: 200px;
+}
+
+#sidebar-box {
+  position: relative !important;
+  overflow-x: hidden !important;
+  margin-right: --sidebar-hover-width + calc(var(--sidebar-hover-width) * -1) !important;
+  left: var(--sidebar-hover-width) !important;
+  min-width: var(--sidebar-hover-width) !important;
+  max-width: var(--sidebar-hover-width) !important;
+  border-right: 1px solid var(--sidebar-border-color);
+  z-index: 1;
+}
+
+#sidebar-box:hover {
+  margin-right: calc(var(--sidebar-hover-width) + var(--sidebar-visible-width) * -1) !important;
+  left: var(--sidebar-visible-width) !important;
+  min-width: var(--sidebar-visible-width) !important;
+  max-width: var(--sidebar-visible-width) !important;
+}
+
+#sidebar {
+  opacity: 0 !important;
+}
+
+#sidebar-box:hover #sidebar {
+  opacity: 1 !important;
+}
+
+/* #sidebar-header is hidden by default, change "none" to "inherit" to restore it. */
+#sidebar-header {
+  display: none !important;
+}
+
+/* #sidebar-splitter styles the divider between the sidebar and the rest of the browser. */
+#sidebar-splitter {
+  display: none;
+}
