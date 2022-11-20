@@ -1,6 +1,6 @@
 My userChrome.css file
 
-Installation:
+#Installation
 
 First, find your user profile folder. It can be found at: Hamburger menu > Help > More troubleshooting information, and clicking "open folder" under "Profile directory"
 
